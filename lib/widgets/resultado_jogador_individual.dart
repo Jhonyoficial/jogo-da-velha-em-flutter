@@ -9,16 +9,23 @@ class ResultadoJogadorIndividual extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 120,
-      height: 70,
+      width: 150,
+      height: 100,
       child: Card(
+        color: Theme.of(context).colorScheme.primary,
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              Text(jogador.nome),
+              Text(
+                jogador.nome,
+                style: const TextStyle(color: Colors.white, fontSize: 20),
+              ),
               const Spacer(),
-              Text(jogador.numeroVitorias.toString()),
+              Text(
+                jogador.numeroVitorias.toString(),
+                style: const TextStyle(color: Colors.white, fontSize: 20),
+              ),
             ],
           ),
         ),

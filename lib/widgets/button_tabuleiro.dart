@@ -15,7 +15,7 @@ class ButtonTabuleiro extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: listEntradas[indiceArrayPai]
           .map((item) => Padding(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
                 child: ElevatedButton(
                   onPressed: () {
                     print("Botão ${item} pressionado");
@@ -28,8 +28,10 @@ class ButtonTabuleiro extends ConsumerWidget {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                      fixedSize: Size(100, 100),
-                      backgroundColor: Colors.grey[500]),
+                    shape: const RoundedRectangleBorder(),
+                    fixedSize: const Size(100, 100),
+                    backgroundColor: Colors.grey[500],
+                  ),
                 ),
               ))
           .toList(),

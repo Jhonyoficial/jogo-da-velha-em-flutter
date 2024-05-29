@@ -23,10 +23,10 @@ class Tabuleiro extends ConsumerWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Resultado(),
-            SizedBox(height: 70),
-            LinhaTabuleiro(),
-            SizedBox(
+            const Resultado(),
+            const SizedBox(height: 70),
+            const LinhaTabuleiro(),
+            const SizedBox(
               height: 50,
             ),
             TextButton(
@@ -39,7 +39,7 @@ class Tabuleiro extends ConsumerWidget {
                 child: Text(
                   'Reiniciar',
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 30,
                     color: Colors.white
                   ),
                 ),
