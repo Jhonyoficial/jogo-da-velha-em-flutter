@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:jogo_da_velha/riverpod/entradas_tabuleiro.riverpod.dart';
 import 'package:jogo_da_velha/riverpod/jogadores_provider.dart';
 import 'package:jogo_da_velha/widgets/linha_tabuleiro.dart';
 import 'package:jogo_da_velha/widgets/resultado.dart';
@@ -9,6 +10,7 @@ class Tabuleiro extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final _jogadoresProvider = ref.watch(jogadoresProvider);
 
     return Scaffold(
         appBar: AppBar(
@@ -24,24 +26,23 @@ class Tabuleiro extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Resultado(),
-            const SizedBox(height: 70),
             const LinhaTabuleiro(),
-            const SizedBox(
-              height: 50,
+            Text(
+              'Jogador da vez: ${_jogadoresProvider.contador % 2 != 0 ? _jogadoresProvider.jogador1.nome : _jogadoresProvider.jogador2.nome}',
             ),
+            const SizedBox(height: 20),
             TextButton(
               style: TextButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.primary,
               ),
-              onPressed: () {},
+              onPressed: () {
+                ref.read(entradasTabuleiroRiver.notifier).setPadrao();
+                },
               child: const Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
                   'Reiniciar',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.white
-                  ),
+                  style: TextStyle(fontSize: 30, color: Colors.white),
                 ),
               ),
             ),

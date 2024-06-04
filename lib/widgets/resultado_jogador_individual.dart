@@ -10,11 +10,11 @@ class ResultadoJogadorIndividual extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 150,
-      height: 100,
+      height: 80,
       child: Card(
         color: Theme.of(context).colorScheme.primary,
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(7),
           child: Column(
             children: [
               Text(
