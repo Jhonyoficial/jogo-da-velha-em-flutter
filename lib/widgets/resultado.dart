@@ -11,10 +11,9 @@ class Resultado extends ConsumerWidget {
     final _jogadoresProvider = ref.watch(jogadoresProvider);
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ResultadoJogadorIndividual(jogador: _jogadoresProvider.jogador1),
-        const SizedBox(width: 120),
         ResultadoJogadorIndividual(jogador: _jogadoresProvider.jogador2)
       ],
     );
