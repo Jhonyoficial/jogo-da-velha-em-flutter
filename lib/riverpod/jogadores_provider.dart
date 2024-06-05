@@ -27,6 +27,10 @@ class JogadoresProvider extends Notifier<Jogadores>{
     state = (jogador1: state.jogador1, jogador2: state.jogador2, contador: state.contador + 1);
   }
 
+  void setNmVitorias(Jogador jogadorVencedor){
+    jogadorVencedor.numeroVitorias++;
+  }
+
 }
 
 final jogadoresProvider = NotifierProvider<JogadoresProvider, Jogadores>((){

@@ -47,6 +47,8 @@ class HomePage extends ConsumerWidget {
                     ),
                     onPressed: () {
                       _jogadoresProvider.createJogadores(_jogador1Controller.text, _jogador2Controller.text);
+                      _jogador1Controller.text = '';
+                      _jogador2Controller.text = '';
                       Navigator.of(context).pushNamed(AppRoutes.TABULEIRO);
                     },
                     child: const Text(
